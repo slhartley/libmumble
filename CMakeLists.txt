@@ -3,9 +3,14 @@
 # that can be found in the LICENSE file at the root of the
 # Mumble source tree or at <https://www.mumble.info/LICENSE>.
 
-cmake_minimum_required(VERSION 3.16)
+message(STATUS ">>>/CMakeLists.txt<<< Processing root CMakeLists.txt")
+
+cmake_minimum_required(VERSION 3.5)
+cmake_policy(SET CMP0079 NEW)
 
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+set(CMAKE_TOOLCHAIN_FILE "$ENV{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake" CACHE STRING "Vcpkg toolchain file")
+set(CMAKE_POLICY_VERSION_MINIMUM "3.5")
 
 project(libmumble
 	VERSION "0.1.0"
@@ -19,7 +24,6 @@ option(LIBMUMBLE_BUILD_TESTS "Build tests" ON)
 option(LIBMUMBLE_BUNDLED_GSL "Use the bundled GSL version instead of looking for one on the system" ON)
 option(LIBMUMBLE_STATIC "Build the library as static instead of shared" OFF)
 option(LIBMUMBLE_WARNINGS_AS_ERRORS "Treat warnings as errors" OFF)
-
 
 include(setup_dependencies)
 include(compiler_utilities)
@@ -66,3 +70,5 @@ if (LIBMUMBLE_BUILD_TESTS)
 	include(CTest)
 	add_subdirectory(tests)
 endif()
+
+message(STATUS ">>>/CMakeLists.txt<<< end")
