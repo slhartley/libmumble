@@ -1,6 +1,6 @@
 Forked to update (as of 08/2026):<br>
-cmake (4.4.2) environment <br>
-vcpkg (2026-07-27-98d7cb0cf1f4686a3e43aa5672b6230c1d56bce8) dependencies<br>
+cmake.exe (4.4.2) environment <br>
+vcpkg.exe (2026-07-27-98d7cb0cf1f4686a3e43aa5672b6230c1d56bce8<br>
 <br>
 changed CMakeLists.txt to reflect cmake minimum version 3.5 <br>
 changed vcpkg.cmake to reflect new baseline 127402f1c75bb3d5ff6bce04b285faa4930a5aca (08/24/2026)<br>
