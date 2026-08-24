@@ -9,7 +9,7 @@
 #include "mumble/Key.hpp"
 
 #include <string_view>
-
+#include <string>
 #include <openssl/ossl_typ.h>
 
 namespace mumble {
