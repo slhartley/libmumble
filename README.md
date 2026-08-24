@@ -7,5 +7,5 @@ changed vcpkg.cmake to reflect new baseline 127402f1c75bb3d5ff6bce04b285faa4930a
 bug fixes:<br>
 src/key.hpp + #include &lt;string&gt;<br>
 <br>
-used Visual Studio 2022 without cmake extension.  Compiled using externally installed cmake-gui and custom build presets
-creating CppProperties.json and a .sln for VS.
+used Visual Studio 2022 without cmake extension.  Compiled using externally installed cmake-gui and custom x64 build presets, 
+using toolchain vcpkg/scripts/buildsystems/vcpkg.cmake, creating CppProperties.json and a VS 2022 generator for the .sln
