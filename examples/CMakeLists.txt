@@ -3,6 +3,8 @@
 # that can be found in the LICENSE file at the root of the
 # Mumble source tree or at <https://www.mumble.info/LICENSE>.
 
+message(STATUS ">>>/examples/CMakeLists.txt<<< started.")
+
 include(FetchContent)
 
 FetchContent_Declare(
@@ -21,6 +23,7 @@ list(APPEND EXAMPLES
 
 add_library(libmumble_example_base OBJECT)
 
+message(STATUS ">>>/examples/CMakeLists.txt<<< searching for #include location : ${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(libmumble_example_base
 	PUBLIC
 		${CMAKE_CURRENT_SOURCE_DIR}
@@ -41,10 +44,10 @@ target_link_libraries(libmumble_example_base
 # Therefore we can use the TARGET variable to reference the directory as well as the target.
 foreach(TARGET IN LISTS EXAMPLES)
 	add_subdirectory(${TARGET})
-
-	target_setup_default_flags(${TARGET})
-
-	set_target_properties(${TARGET}
+        
+        target_setup_default_flags(${TARGET})
+        
+        set_target_properties(${TARGET}
 		PROPERTIES
 			RUNTIME_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/example"
 	)
@@ -54,3 +57,5 @@ foreach(TARGET IN LISTS EXAMPLES)
 			libmumble_example_base
 	)
 endforeach()
+
+message(STATUS ">>>/examples/CMakeLists.txt<<< end.")
