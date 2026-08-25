@@ -3,6 +3,9 @@
 # that can be found in the LICENSE file at the root of the
 # Mumble source tree or at <https://www.mumble.info/LICENSE>.
 
+message(STATUS ">>>/src/CMakeLists.txt<<< Processing source CMakeLists.txt")
+message(STATUS ">>>/src/CMakeLists.txt<<< LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}")
+
 find_package(Boost REQUIRED
 	COMPONENTS
 		thread
@@ -37,10 +40,13 @@ set_target_properties(mumble_library
 if(WIN32)
 	# We use the bundled wepoll library
 	set(HAVE_EPOLL TRUE)
+        message(STATUS ">>>/src/CMakeLists.txt<<< WIN32 & HAVE_EPOLL TRUE")
 else()
 	include(CheckSymbolExists)
 
 	check_symbol_exists("epoll_create" "sys/epoll.h" HAVE_EPOLL)
+        message(STATUS ">>>/src/CMakeLists.txt<<< HAVE_EPOLL: ${HAVE_EPOLL}")
+
 endif()
 
 target_compile_definitions(mumble_library
@@ -106,3 +112,4 @@ target_link_libraries(mumble_library
 		Microsoft.GSL::GSL
 )
 
+message(STATUS ">>>/src/CMakeLists.txt<<< end")
