@@ -8,4 +8,21 @@ bug fixes:<br>
 src/key.hpp + #include &lt;string&gt;<br>
 <br>
 used Visual Studio 2022 without cmake extension.  Compiled using externally installed cmake-gui and custom x64 build presets, 
-using toolchain vcpkg/scripts/buildsystems/vcpkg.cmake, creating CppProperties.json and a VS 2022 generator for the .sln
+using toolchain vcpkg/scripts/buildsystems/vcpkg.cmake, creating CppProperties.json and a VS 2022 generator for the .sln<br>
+<br>
+cmake-gui compile instructions:<br>
+git clone &lt;thisrepository&gt;
+Where is the source code: &lt;location of cloned repository (libmumble)&gt;<br>
+Preset: custom<br>
+Where to build binaries: &lt;libmumble/builds&gt;<br>
+Press Configure<br>
+Build directory does not exist.  Should I create it? &lt;Yes&gt;<br>
+Specify the generator for this project: &lt;Visual Studio 17 2022&gt; (for the generated .sln, or use another generator such as Ninja)<br>
+Optional platform for generator: &lt;x64&gt;<br>
+Optional toolset to use &lt;leave blank&gt;<br>
+Check "Specify toolchain file for cross compiling"<br>
+Specify toolchain file: &lt; I used my vcpkg installation location vcpkg/scripts/buildsystems/vcpkg.cmake&gt;<br>
+Press Finish<br>
+cmake-gui will configure and present you a list of variables found in the CMake configure files to change. I chose to build the example client/server executables, so I turned LIBMUMBLE_BUILD_EXAMPLES (or you can turn it ON in libmumble/CMakeLists.txt)<br>
+Press Generate<br>
+CMake should download and compile all the libraries and tests you need<br>
