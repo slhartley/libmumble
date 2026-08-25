@@ -1,3 +1,4 @@
+Updated to generate Windows X64 shared libraries<br>
 Forked to update (as of 08/2026):<br>
 cmake.exe (4.4.2) environment <br>
 vcpkg.exe (2026-07-27-98d7cb0cf1f4686a3e43aa5672b6230c1d56bce8<br>
@@ -26,3 +27,4 @@ Press Finish<br>
 cmake-gui will configure and present you a list of variables found in the CMake configure files to change. I chose to build the example client/server executables, so I turned LIBMUMBLE_BUILD_EXAMPLES (or you can turn it ON in libmumble/CMakeLists.txt)<br>
 Press Generate<br>
 CMake should download and compile all the libraries and tests you need<br>
+x64 Windows Shared libraries are located in libmumble/builds/vcpkg-installed/x64-windows/bin
