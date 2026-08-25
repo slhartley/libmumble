@@ -3,6 +3,8 @@
 # that can be found in the LICENSE file at the root of the
 # Mumble source tree or at <https://www.mumble.info/LICENSE>.
 
+message(STATUS ">>>/cmake/compiler_utilities.cmake<<< started.")
+
 include(CompilerFlags)
 
 function(target_disable_warnings TARGET)
@@ -49,3 +51,4 @@ function(target_setup_default_flags TARGET)
 	endif()
 endfunction()
 
+message(STATUS ">>>/cmake/compiler_utilities.cmake<<< end.")
