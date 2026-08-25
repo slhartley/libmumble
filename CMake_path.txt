@@ -1,0 +1,14 @@
+/CMakeLists.txt is started.
+/vcpkg.json is processed to learn which final packages are needed 
+(boost-thread, ms-gsl, openssl, opus, protobuf).
+The toolchain you provide (either with CMakePresets.json) or manually with 
+CMake) is consulted for the totality of packages needed for download.
+/cmake/setup_dependencies.cmake is included and processed. This sets up 
+the /_dependencies directory, and downloads GSL, Quickpool, wepoll and 
+cmake_compiler_flags.
+/cmake/compiler_utilities.cmake is included and processed.
+/src/CMakeLists.txt should be included and processed next.
+If LIBMUMBLE_BUILD_EXAMPLES set, /examples/CMakeLists.txt should be included 
+and processed next.  Downloads toml11 (in _dependencies) and compiles libraries
+for /examples/ExampleClient and /examples/ExampleServer
+
