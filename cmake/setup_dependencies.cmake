@@ -3,6 +3,8 @@
 # that can be found in the LICENSE file at the root of the
 # Mumble source tree or at <https://www.mumble.info/LICENSE>.
 
+message(STATUS ">>>/cmake/setup_dependencies.cmake<<< started.")
+
 include(FetchContent)
 
 set(LIBMUMBLE_DEPENDENCY_DIR "${PROJECT_SOURCE_DIR}/_dependencies" CACHE STRING "Directory into which dependencies shall be downloaded into")
@@ -57,3 +59,4 @@ FetchContent_GetProperties(cmake_compiler_flags SOURCE_DIR COMPILER_FLAGS_SRC_DI
 list(APPEND CMAKE_MODULE_PATH "${COMPILER_FLAGS_SRC_DIR}")
 
 message(STATUS "<<< Dependency configuration finished")
+message(STATUS ">>>/cmake/setup_dependencies.cmake<<< end")
