@@ -32,9 +32,12 @@ target_setup_default_flags(mumble_library)
 
 set_target_properties(mumble_library
 	PROPERTIES
-		ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}
-		LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}
-		RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}
+		ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}		#<-- /builds/Release/mumble_library.lib/.a
+		RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}		#<-- /builds/Release/mumble_library.dll/.so
+		LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}		#<-- /builds/Release/*.dll/*.so abseil_dll,
+									# boost_thread-vc143-mt-x64-1_92, 
+									# libcrypto-3-x64, libprotobuf, libssl-3-x64,
+									# opus
 )
 
 if(WIN32)
