@@ -9,7 +9,7 @@ src/key.hpp + #include &lt;string&gt;<br>
 <br>
 Note:  If compiling for x64, You will get a ton of compiler warnings about std::size mismatches with uint_32 types.  std::size will zero out uint_32 vars on x64.  
 I have not fixed these yet.</br>
-used Visual Studio 2022 without cmake extension.  Compiled using externally installed cmake-gui and custom x64 build presets, 
+I used Visual Studio 2022 without cmake extension as I was having trouble compiling some updated packages.  Compiled using externally installed cmake/cmake-gui and custom x64 build presets, 
 using toolchain vcpkg/scripts/buildsystems/vcpkg.cmake, creating CppProperties.json and a VS 2022 generator for the .sln<br>
 <br>
 cmake-gui compile instructions:<br>
