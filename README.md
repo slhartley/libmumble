@@ -47,20 +47,12 @@ It requires Linux kernel headers from the system package manager.<br>
    <li>They can be installed on Ubuntu systems via `apt install linux-libc-dev`</li>
    <li>They can be installed on RH/AlmaLinux via `dnf install kernel-devel kernel-headers`</li>
 </ul>
-You might get a complaint about missing Perl modules such as:
+You might get a complaint about missing Perl modules on RH/CentOS/AlmaLinux, which break up Perl packages and may not have such as:
 <ul>
-<li>perl-IPC-Cmd</li>
-   <ul>
-      <li>They can be installed on RH/AlmaLinux via `dnf install perl-IPC-Cmd`</li>
-   </ul>
-<li>perl-Time-Piece</li>
-   <ul>
-      <li>They can be installed on RH/AlmaLinux via `dnf install perl-Time-Piece`</li>
-   </ul>
-<li>perl-FindBin</li>      
-   <ul>
-      <li>They can be installed on RH/AlmaLinux via `dnf install perl-FindBin`</li>
-   </ul>
+   <li>perl-IPC-Cmd: installed via `dnf install perl-IPC-Cmd`</li>
+   <li>perl-Time-Piece: installed via `dnf install perl-Time-Piece`</li>
+   <li>perl-FindBin: installed via `dnf install perl-FindBin`</li>      
+</ul>
 </ul>The environment variable VCPKG_ROOT must be set.  For user accounts, you can add <code>VCPKG_ROOT="~/bin/vcpkg"</code> to your /etc/environment file.<br>
 vcpkg must be installed wherever root/user has write permissions.  ~/bin is a great place to <code>git clone http://github.com/microsoft/vcpkg.git</code><br>
 Don't forget to <code>chmod -R USER:USER ~/bin/vcpkg</code><br>
