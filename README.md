@@ -61,7 +61,7 @@ You might get a complaint about missing Perl modules such as:
    <ul>
       <li>They can be installed on RH/AlmaLinux via `dnf install perl-FindBin`</li>
    </ul>
-</ul>The environment variable VCPKG_ROOT must be set.  For user accounts, you can add <code>VCPKG_ROOT="$HOME/bin/vcpkg"</code> to your /etc/environment file.<br>
-vcpkg must be installed wherever root/user has write permissions.  $HOME/bin is a great place to <code>git clone http://github.com/microsoft/vcpkg.git</code><br>
-Don't forget to <code>chmod -R USER:USER $HOME/bin/vcpkg</code><br>
+</ul>The environment variable VCPKG_ROOT must be set.  For user accounts, you can add <code>VCPKG_ROOT="~/bin/vcpkg"</code> to your /etc/environment file.<br>
+vcpkg must be installed wherever root/user has write permissions.  ~/bin is a great place to <code>git clone http://github.com/microsoft/vcpkg.git</code><br>
+Don't forget to <code>chmod -R USER:USER ~/bin/vcpkg</code><br>
 You can use lincompile.sh if it suits your workflow<br>
