@@ -40,13 +40,28 @@ cli cmake instructions:
 <br>
 Linux notes:<br>
 vcpkg, git, gcc/c++, cmake might be some necessary tools needed to start.<br>
-openssl requires Linux kernel headers from the system package manager.<br>
+vcpkg putting together openssl can be finicky<br>
+It requires Linux kernel headers from the system package manager.<br>
+<ul>
    <li>They can be installed on Alpine systems via `apk add linux-headers`.</li>
    <li>They can be installed on Ubuntu systems via `apt install linux-libc-dev`</li>
    <li>They can be installed on RH/AlmaLinux via `dnf install kernel-devel kernel-headers`</li>
-You might get a complaint about missing Perl modules such as perl-IPC-Cmd<br>
-   <li>They can be installed on RH/AlmaLinux via `dnf install perl-IPC-Cmd`</li>
-The environment variable VCPKG_ROOT must be set.  For user accounts, you can add <code>VCPKG_ROOT="$HOME/bin/vcpkg"</code> to your /etc/environment file.<br>
+</ul>
+You might get a complaint about missing Perl modules such as:
+<ul>
+<li>perl-IPC-Cmd</li>
+   <ul>
+      <li>They can be installed on RH/AlmaLinux via `dnf install perl-IPC-Cmd`</li>
+   </ul>
+<li>perl-Time-Piece</li>
+   <ul>
+      <li>They can be installed on RH/AlmaLinux via `dnf install perl-Time-Piece`</li>
+   </ul>
+<li>perl-FindBin</li>      
+   <ul>
+      <li>They can be installed on RH/AlmaLinux via `dnf install perl-FindBin`</li>
+   </ul>
+</ul>The environment variable VCPKG_ROOT must be set.  For user accounts, you can add <code>VCPKG_ROOT="$HOME/bin/vcpkg"</code> to your /etc/environment file.<br>
 vcpkg must be installed wherever root/user has write permissions.  $HOME/bin is a great place to <code>git clone http://github.com/microsoft/vcpkg.git</code><br>
 Don't forget to <code>chmod -R USER:USER $HOME/bin/vcpkg</code><br>
 You can use lincompile.sh if it suits your workflow<br>
