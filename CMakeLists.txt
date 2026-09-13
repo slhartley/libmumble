@@ -20,14 +20,6 @@ set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 set(CMAKE_TOOLCHAIN_FILE "$ENV{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake" CACHE STRING "Vcpkg toolchain file")
 set(CMAKE_POLICY_VERSION_MINIMUM "3.5")
 
-if(EXISTS "${CMAKE_TOOLCHAIN_FILE}")
-	message(STATUS ">>>/CMakeLists.txt<<< Using vcpkg toolchain file '${CMAKE_TOOLCHAIN_FILE}'.")
-  	message(STATUS ">>>/CMakeLists.txt<<< Dependencies in vcpkg.json will be downloaded.")
-else()
-    	message(WARNING ">>>/CMakeLists.txt<<< Toolchain file (CMAKE_TOOLCHAIN_FILE) '${CMAKE_TOOLCHAIN_FILE}' not found.")
-	message(WARNING ">>>/CMakeLists.txt<<< Dependencies will not be downloaded.")
-endif()
-
 project(libmumble
 	VERSION "0.1.0"
 	DESCRIPTION "The official Mumble library."
