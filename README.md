@@ -37,3 +37,14 @@ cli cmake instructions:
 <code>cmake -S . -B build -A x64</code><br>
 4. use cmake to compile with Debug/Release configuration<br>
 <code>cmake --build build --config  Release</code><br>
+<br>
+Linux notes:<br>
+vcpkg, git, gcc/c++, cmake might be some necessary tools needed to start.<br>
+openssl requires Linux kernel headers from the system package manager.<br>
+   They can be installed on Alpine systems via `apk add linux-headers`.<br>
+   They can be installed on Ubuntu systems via `apt install linux-libc-dev`<br>
+   They can be installed on RH/AlmaLinux via `dnf install kernel-devel kernel-headers`<br>
+The environment variable VCPKG_ROOT must be set.  For user accounts, you can add <code>VCPKG_ROOT="$HOME/bin/vcpkg"</code> to your /etc/environment file.<br>
+vcpkg must be installed wherever root/user has write permissions.  $HOME/bin is a great place to <code>git clone http://github.com/microsoft/vcpkg.git</code><br>
+Don't forget to <code>chmod -R USER:USER $HOME/bin/vcpkg</code><br>
+You can use lincompile.sh if it suits your workflow<br>
