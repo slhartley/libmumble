@@ -18,10 +18,7 @@
 #include <utility>
 #include <vector>
 
-#include <toml11/comments.hpp>
-#include <toml11/get.hpp>
-#include <toml11/parser.hpp>
-#include <toml11/value.hpp>
+#include <toml.hpp>
 
 using namespace mumble;
 
