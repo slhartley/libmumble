@@ -5,7 +5,7 @@
 
 message(STATUS ">>>/CMakeLists.txt<<< Processing root CMakeLists.txt")
 
-cmake_minimum_required(VERSION 3.3)
+cmake_minimum_required(VERSION 3.5)
 cmake_policy(SET CMP0079 NEW)
 
 if(DEFINED ENV{VCPKG_ROOT})
@@ -18,7 +18,7 @@ endif()
 set(CMAKE_WARN_DEPRECATED OFF CACHE BOOL "" FORCE)
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 set(CMAKE_TOOLCHAIN_FILE "$ENV{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake" CACHE STRING "Vcpkg toolchain file")
-set(CMAKE_POLICY_VERSION_MINIMUM "3.3")
+#set(CMAKE_POLICY_VERSION_MINIMUM "3.3")
 
 project(libmumble
 	VERSION "0.1.0"
