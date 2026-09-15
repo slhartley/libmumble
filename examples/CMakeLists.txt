@@ -10,8 +10,9 @@ include(FetchContent)
 FetchContent_Declare(
 	toml11
 	GIT_REPOSITORY https://github.com/ToruNiina/toml11
-	GIT_TAG        v3.7.1
-	GIT_SHALLOW    ON
+	#GIT_TAG        v3.7.1
+	GIT_TAG			b32a2fff0d27e1f7522f26a125101500ddb47156
+	GIT_SHALLOW    	ON
 )
 FetchContent_MakeAvailable(toml11)
 
