@@ -23,9 +23,9 @@
 #include <unordered_map>
 #include <utility>
 
-#include <toml/get.hpp>
-#include <toml/parser.hpp>
-#include <toml/value.hpp>
+#include <toml11/get.hpp>
+#include <toml11/parser.hpp>
+#include <toml11/value.hpp>
 
 using namespace mumble;
 
