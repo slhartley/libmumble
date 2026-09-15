@@ -22,10 +22,7 @@
 #include <string_view>
 #include <unordered_map>
 #include <utility>
-
-#include <toml11/get.hpp>
-#include <toml11/parser.hpp>
-#include <toml11/value.hpp>
+#include <toml.hpp>
 
 using namespace mumble;
 
