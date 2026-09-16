@@ -39,6 +39,8 @@ cli cmake instructions:
 4. use cmake to compile with Debug/Release configuration<br>
 <code>cmake --build build --config  Release</code><br>
 <br>
+...or try compile.sh (chmod +x after downloading) or compile.bat
+<br>
 Linux notes:<br>
 vcpkg, git, gcc/c++, cmake might be some necessary tools needed to start.<br>
 vcpkg putting together openssl can be finicky<br>
