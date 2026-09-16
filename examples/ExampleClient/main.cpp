@@ -107,7 +107,7 @@ int32_t main(const int argc, const char **argv) {
 
 	const auto ret = Peer::connect({ peerTcpIP, peerTcpPort }, { localTcpIP, localTcpPort });
 	if (ret.first != Code::Success) {
-		printf("Connection failed with error \"%s\"!\n", text(ret.first).data());
+		printf("Peer::connect() failed with error \"%s\"!\n", text(ret.first).data());
 		return 3;
 	}
 
@@ -116,7 +116,7 @@ int32_t main(const int argc, const char **argv) {
 	auto connection = std::make_shared< Connection >(ret.second, false);
 	auto code       = (*connection)(connectionFeedback(*connection, cv));
 	if (code != Code::Success) {
-		printf("Connection failed with error \"%s\"!\n", text(code).data());
+		printf("Connection() failed with error \"%s\"!\n", text(code).data());
 		return 4;
 	}
 
@@ -124,7 +124,7 @@ int32_t main(const int argc, const char **argv) {
 	client.addTCP(connection);
 	code = client.startTCP(peerFeedback());
 	if (code != Code::Success) {
-		printf("TCP failed with error \"%s\"!\n", text(code).data());
+		printf("Peer::startTCP() failed with error \"%s\"!\n", text(code).data());
 		return 5;
 	}
 
