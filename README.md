@@ -59,3 +59,6 @@ You might get a complaint about missing Perl modules on RH/CentOS/AlmaLinux, whi
 vcpkg must be installed wherever root/user has write permissions.  ~/bin is a great place to <code>git clone http://github.com/microsoft/vcpkg.git</code><br>
 Don't forget to <code>chmod -R USER:USER ~/bin/vcpkg</code><br>
 You can use lincompile.sh (chmod +x after downloading) if it suits your workflow<br>
+<br>
+Certificates: A sample localhost certificate and key are included for testing in examples/ExampleServer<br>
+You need at least a self-signed certificate for TLS connections.
