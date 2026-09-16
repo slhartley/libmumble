@@ -1,6 +1,7 @@
 Forked to update (as of 08/2026):<br>
 cmake.exe (4.4.2) environment <br>
 vcpkg.exe (2026-07-27-98d7cb0cf1f4686a3e43aa5672b6230c1d56bce8)<br>
+toml (b32a2fff0d27e1f7522f26a125101500ddb47156) main.cpp has toml.hpp wrapper<br>
 <br>
 changed CMakeLists.txt to reflect cmake minimum version 3.5 <br>
 changed vcpkg.cmake to reflect new baseline 127402f1c75bb3d5ff6bce04b285faa4930a5aca (08/24/2026)<br>
@@ -8,7 +9,7 @@ bug fixes:<br>
 src/key.hpp + #include &lt;string&gt;<br>
 <br>
 Note:  If compiling for x64, You will get a ton of compiler warnings about size_t mismatches with uint_32 types.  size_t will zero out uint_32 vars on x64.  
-I have not fixed these yet.</br>
+I have not fixed these yet, but they will compile as is with warnings.</br>
 I used Visual Studio 2022 without cmake extension as I was having trouble compiling some updated packages.  Compiled using externally installed cmake/cmake-gui and custom x64 build presets, 
 using toolchain vcpkg/scripts/buildsystems/vcpkg.cmake, creating CppProperties.json and a VS 2022 generator for the .sln<br>
 <br>
