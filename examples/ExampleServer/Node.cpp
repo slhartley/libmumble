@@ -36,7 +36,7 @@ Node::Node(const std::shared_ptr< UserManager > &userManager, const std::string_
 	Endpoint endpoint(tcpIP, tcpPort);
 	auto code = m_server.bindTCP(endpoint);
 	if (code != Code::Success) {
-		printf("Node(): TCP bind failed with error \"%s\"!\n", text(code).data());
+		printf("TCP bind failed with error \"%s\"!\n", text(code).data());
 		return;
 	}
 
@@ -45,7 +45,7 @@ Node::Node(const std::shared_ptr< UserManager > &userManager, const std::string_
 	endpoint = Endpoint(udpIP, udpPort);
 	code     = m_server.bindUDP(endpoint);
 	if (code != Code::Success) {
-		printf("Node(): UDP bind failed with error \"%s\"!\n", text(code).data());
+		printf("UDP bind failed with error \"%s\"!\n", text(code).data());
 		return;
 	}
 
@@ -313,7 +313,7 @@ bool Node::startTCP() {
 
 	const auto code = m_server.startTCP(feedbackTCP);
 	if (code != Code::Success) {
-		printf("Peer::startTCP() failed with error \"%s\"!\n", text(code).data());
+		printf("TCP failed with error \"%s\"!\n", text(code).data());
 		return false;
 	}
 
@@ -421,7 +421,7 @@ bool Node::startUDP() {
 
 	auto code = m_server.startUDP(feedbackUDP);
 	if (code != Code::Success) {
-		printf("Peer::startUDP() failed with error \"%s\"!\n", text(code).data());
+		printf("UDP failed with error \"%s\"!\n", text(code).data());
 		return false;
 	}
 
@@ -448,7 +448,7 @@ bool Node::setCert(const std::string_view certPath, const std::string_view keyPa
 
 	Cert cert(buffer.str());
 	if (!cert) {
-		printf("Node::setCert(): Failed to load certificate!\n");
+		printf("Failed to load certificate!\n");
 		return false;
 	}
 
@@ -459,7 +459,7 @@ bool Node::setCert(const std::string_view certPath, const std::string_view keyPa
 
 	Key key(buffer.str(), true);
 	if (!key) {
-		printf("Node::setCert(): Failed to load key!\n");
+		printf("Failed to load key!\n");
 		return false;
 	}
 
